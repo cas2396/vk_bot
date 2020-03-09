@@ -1,0 +1,7 @@
+2020-03-04 07:40 DEBUG Отправляем сообщение назад
+2020-03-04 07:40 INFO не знаю событий такого типа VkBotEventType.MESSAGE_REPLY
+2020-03-09 11:33 INFO не знаю событий такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-03-09 11:33 DEBUG Отправляем сообщение назад
+2020-03-09 11:33 INFO не знаю событий такого типа VkBotEventType.MESSAGE_REPLY
+2020-03-09 11:43 INFO не знаю событий такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-03-09 12:01 INFO не знаю событий такого типа VkBotEventType.MESSAGE_TYPING_STATE
