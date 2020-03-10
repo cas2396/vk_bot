@@ -2,7 +2,6 @@
 
 from unittest import TestCase
 from unittest.mock import patch, Mock, ANY
-
 from echo_bot import Bot
 from vk_api.bot_longpoll import VkBotMessageEvent
 
@@ -17,9 +16,8 @@ class MyTestCase(TestCase):
         count = 5
         obj = {'a': 1}
         events = [obj] * count
-        long_poller_mock = Mock(return_value=events)
         long_poller_listen_mock = Mock()
-        long_poller_listen_mock.listen = long_poller_mock
+        long_poller_listen_mock.listen = Mock(return_value=events)
         with patch('bot.vk_api.VkApi'):
             with patch('bot.VkBotLongPoll', return_value=long_poller_listen_mock):
                 bot = Bot('', '')
@@ -43,8 +41,6 @@ class MyTestCase(TestCase):
 
                 bot.on_event(event)
 
-        send_mock.assert_called_once_with(
-            message=("Возвращаю строку: " + self.RAW_EVENT['object']['text']),
-            random_id=ANY,
-            peer_id=self.RAW_EVENT['object']['peer_id']
-        )
+        send_mock.assert_called_once_with(message=("Возвращаю строку: " + self.RAW_EVENT['object']['text']),
+                                          random_id=ANY,
+                                          peer_id=self.RAW_EVENT['object']['peer_id'])
