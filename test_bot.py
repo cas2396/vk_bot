@@ -2,6 +2,7 @@
 
 from unittest import TestCase
 from unittest.mock import patch, Mock, ANY
+
 from echo_bot import Bot
 from vk_api.bot_longpoll import VkBotMessageEvent
 
